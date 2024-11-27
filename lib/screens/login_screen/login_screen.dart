@@ -44,57 +44,17 @@ class LoginScreen extends StatelessWidget {
         children: [
           Container(
             width: 274,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                Center(
-                child: SizedBox(
-                  width: 274,
-                  height: 61,
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      labelText: "Email",
-                      labelStyle: const TextStyle(
-                        color: Colors.brown,
-                        fontSize: 16,
-                      ),
-                      floatingLabelBehavior: FloatingLabelBehavior.always,
-                      contentPadding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30),
-                        borderSide: BorderSide(
-                            color: Colors.brown,
-                            width: 2
-                        ),
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30),
-                        borderSide: const BorderSide(
-                          color: Colors.brown,
-                          width: 2.0,
-                        ),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30),
-                        borderSide: const BorderSide(
-                          color: Colors.brown,
-                          width: 2.0,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-                SizedBox(
-                  height: 40,
-                ),
-                Center(
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Center(
                   child: SizedBox(
                     width: 274,
                     height: 61,
                     child: TextFormField(
                       decoration: InputDecoration(
-                        labelText: "Password",
+                        labelText: "Email",
                         labelStyle: const TextStyle(
                           color: Colors.brown,
                           fontSize: 16,
@@ -126,21 +86,64 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Text(
-                      "Forget Password?",
-                      style: TextStyle(
-                        fontSize: 13,
-                        color: Color(0xFF565656),
-                        decoration: TextDecoration.underline,
-
+                  SizedBox(
+                    height: 40,
+                  ),
+                  Center(
+                    child: SizedBox(
+                      width: 274,
+                      height: 61,
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                          labelText: "Password",
+                          labelStyle: const TextStyle(
+                            color: Colors.brown,
+                            fontSize: 16,
+                          ),
+                          floatingLabelBehavior: FloatingLabelBehavior.always,
+                          contentPadding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(30),
+                            borderSide: BorderSide(
+                                color: Colors.brown,
+                                width: 2
+                            ),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(30),
+                            borderSide: const BorderSide(
+                              color: Colors.brown,
+                              width: 2.0,
+                            ),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(30),
+                            borderSide: const BorderSide(
+                              color: Colors.brown,
+                              width: 2.0,
+                            ),
+                          ),
+                        ),
                       ),
                     ),
-                  ],
-                ),
-              ],
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      TextButton(
+                        onPressed: (){},
+                       child: Text("Forget Password?",
+                        style: TextStyle(
+                          fontSize: 13,
+                          color: Color(0xFF565656),
+                          decoration: TextDecoration.underline,
+              
+                        ),
+                      )),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
             Column(
