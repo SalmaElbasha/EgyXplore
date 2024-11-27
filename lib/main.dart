@@ -1,4 +1,6 @@
-import 'package:egyxplore/screens/on_boarding/on_boarding_1.dart';
+
+import 'package:egyxplore/screens/login_screen/login_screen.dart';
+
 import 'package:egyxplore/screens/splash/splash_Screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -22,7 +24,9 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'EgyXplore',
       debugShowCheckedModeBanner: false,
-      home: OnBoarding1(),
+
+      home: LoginScreen(),
+
     );
   }
 }
