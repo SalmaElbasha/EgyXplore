@@ -1,3 +1,4 @@
+import 'package:egyxplore/screens/on_boarding/on_boarding3.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -90,16 +91,19 @@ class OnBoarding2 extends StatelessWidget {
                       fontSize: 16,
                       fontWeight: FontWeight.w500
                   ),)),
-                Container(
-                  margin: EdgeInsets.only(right: 10),
-                  height: 50,
-                  width: 50,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(100),
-                      color: Color(0xff8B5843)
-                  ),
-                  child: Center(
-                    child: Icon(Icons.keyboard_arrow_right,color: Color(0xffffffff),size: 35,),
+                InkWell(
+                  onTap: (){Get.to(()=>OnBoarding3());},
+                  child: Container(
+                    margin: EdgeInsets.only(right: 10),
+                    height: 50,
+                    width: 50,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(100),
+                        color: Color(0xff8B5843)
+                    ),
+                    child: Center(
+                      child: Icon(Icons.keyboard_arrow_right,color: Color(0xffffffff),size: 35,),
+                    ),
                   ),
                 )
               ],)
