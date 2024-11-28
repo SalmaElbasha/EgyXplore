@@ -12,7 +12,7 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomBackButton(
-        onBackTap: () {},
+        onBackTap: () {Get.back();},
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,

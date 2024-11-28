@@ -20,7 +20,7 @@ class _SignupScreenState extends State<SignupScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomBackButton(
-        onBackTap: () {},
+        onBackTap: () {Get.back();},
       ),
       body: SingleChildScrollView(
         child: Container(
