@@ -6,6 +6,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+<<<<<<< Updated upstream
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(100.0),
         child: AppBar(
@@ -38,6 +39,10 @@ class LoginScreen extends StatelessWidget {
             ),
           ),
         ),
+=======
+      appBar: CustomBackButton(
+        onBackTap: () {Get.back();},
+>>>>>>> Stashed changes
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
