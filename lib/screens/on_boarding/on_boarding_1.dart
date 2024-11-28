@@ -7,19 +7,21 @@ class OnBoarding1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-          body: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                child: Image(image: AssetImage("assets/images/Tour-guide-amico(1)1@2x.png")),
-                decoration: BoxDecoration(
-          
+          body: Container(
+            height: Get.height,
+            width: Get.width,
+            color: Color(0xffffffff),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  child: Image(image: AssetImage("assets/images/Tour-guide-amico(1)1@2x.png")),
+                  decoration: BoxDecoration(
+
+                  ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 8.0),
-                child: Row(
+                Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -55,49 +57,53 @@ class OnBoarding1 extends StatelessWidget {
                     ),
                   ],
                 ),
-              ),
-              Column(
-                children: [
-                  Text("Welcome to EgyXplore!",
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w800
-                  ),),
-                  Container(
-                    width: Get.width*0.6,
-                    height: Get.height*0.12,
-                    child: Text("Discover the wonders of Egypt with our personalized recommendation system. Let us guide you to the mostenchanting destinations tailored just for you.",
-                        textAlign: TextAlign.center,style: TextStyle(
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 10.0),
+                      child: Text("Welcome to EgyXplore!",
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.w800
+                      ),),
+                    ),
+                    Container(
+                      width: Get.width*0.6,
+                      height: Get.height*0.12,
+                      child: Text("Discover the wonders of Egypt with our personalized recommendation system. Let us guide you to the mostenchanting destinations tailored just for you.",
+                          textAlign: TextAlign.center,style: TextStyle(
 
-                            fontSize: 13,
-                            fontWeight: FontWeight.w300,
-                          color: Color(0xff5B5B5B)
-                        )),
-                  ),
-                ],
-              ),
-              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween
-                ,children: [
-                  TextButton(onPressed: (){}, child: Text("Skip",
-                  style: TextStyle(
-                    color: Color(0xff5B5B5B),
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500
-                  ),)),
-                  Container(
-                    margin: EdgeInsets.only(right: 10),
-                    height: 50,
-                    width: 50,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(100),
-                      color: Color(0xff8B5843)
+                              fontSize: 13,
+                              fontWeight: FontWeight.w300,
+                            color: Color(0xff5B5B5B)
+                          )),
                     ),
-                    child: Center(
-                      child: Icon(Icons.keyboard_arrow_right,color: Color(0xffffffff),size: 35,),
-                    ),
-                  )
-                ],)
-            ],
+                  ],
+                ),
+                Row(mainAxisAlignment: MainAxisAlignment.spaceBetween
+                  ,children: [
+                    TextButton(onPressed: (){}, child: Text("Skip",
+                    style: TextStyle(
+                      color: Color(0xff5B5B5B),
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500
+                    ),)),
+                    Container(
+                      margin: EdgeInsets.only(right: 10),
+                      height: 50,
+                      width: 50,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(100),
+                        color: Color(0xff8B5843)
+                      ),
+                      child: Center(
+                        child: Icon(Icons.keyboard_arrow_right,color: Color(0xffffffff),size: 35,),
+                      ),
+                    )
+                  ],)
+              ],
+            ),
           ),
     );
   }
