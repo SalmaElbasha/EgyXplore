@@ -1,5 +1,6 @@
 
 import 'package:egyxplore/screens/login_screen/login_screen.dart';
+import 'package:egyxplore/screens/signup_screen/signup_screen.dart';
 
 import 'package:egyxplore/screens/splash/splash_Screen.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
       title: 'EgyXplore',
       debugShowCheckedModeBanner: false,
 
-      home: LoginScreen(),
+      home: SignupScreen(),
 
     );
   }
