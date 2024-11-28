@@ -91,20 +91,23 @@ class OnBoarding3 extends StatelessWidget {
                       fontSize: 16,
                       fontWeight: FontWeight.w500
                   ),)),
-                Container(
-                  margin: EdgeInsets.only(right: 10),
-                  height: Get.height*0.07,
-                  width: Get.width*0.35,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(100),
-                      color: Color(0xff8B5843)
-                  ),
-                  child: Center(
-                    child: Text("Get Started",style: TextStyle(
-                      color: Color(0xffffffff),
-                      fontWeight: FontWeight.w400,
-                      fontSize:15 ,
-                    ),)
+                InkWell(
+                  onTap: (){},
+                  child: Container(
+                    margin: EdgeInsets.only(right: 10),
+                    height: Get.height*0.07,
+                    width: Get.width*0.35,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(100),
+                        color: Color(0xff8B5843)
+                    ),
+                    child: Center(
+                      child: Text("Get Started",style: TextStyle(
+                        color: Color(0xffffffff),
+                        fontWeight: FontWeight.w400,
+                        fontSize:15 ,
+                      ),)
+                    ),
                   ),
                 )
               ],)
