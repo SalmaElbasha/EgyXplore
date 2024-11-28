@@ -7,7 +7,7 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(100.0),
+        preferredSize: const Size.fromHeight(80.0),
         child: AppBar(
           elevation: 0,
           backgroundColor: Colors.transparent,
@@ -17,6 +17,7 @@ class LoginScreen extends StatelessWidget {
             child: GestureDetector(
               onTap: () {},
               child: Container(
+                margin: EdgeInsets.only(left: 10,top: 15),
                 width: 42,
                 height: 42,
                 decoration: BoxDecoration(
