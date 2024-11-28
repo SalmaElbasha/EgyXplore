@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class OnBoarding1 extends StatelessWidget {
   const OnBoarding1({super.key});
@@ -7,6 +8,8 @@ class OnBoarding1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
           body: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
                 child: Image(image: AssetImage("assets/images/Tour-guide-amico(1)1@2x.png")),
@@ -15,21 +18,28 @@ class OnBoarding1 extends StatelessWidget {
                 ),
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Container(
-                    width: 25,
-                    height: 10,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color(0xff8B5843)
+                  Padding(
+                    padding: const EdgeInsets.only(right: 4.0),
+                    child: Container(
+                      width: 25,
+                      height: 10,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Color(0xff8B5843)
+                      ),
                     ),
                   ),
-                  Container(
-                    width: 10,
-                    height: 10,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(100),
-                      color: Color(0xff8B5843).withOpacity(0.5)
+                  Padding(
+                    padding: const EdgeInsets.only(right: 4.0),
+                    child: Container(
+                      width: 10,
+                      height: 10,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(100),
+                        color: Color(0xff8B5843).withOpacity(0.5)
+                      ),
                     ),
                   ),
                   Container(
@@ -41,7 +51,32 @@ class OnBoarding1 extends StatelessWidget {
                     ),
                   ),
                 ],
-              )
+              ),
+              Text("Welcome to EgyXplore!",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.w800
+              ),),
+              Container(
+                width: Get.width*0.6,
+                height: Get.height*0.12,
+                child: Text("Discover the wonders of Egypt with our personalized recommendation system. Let us guide you to the mostenchanting destinations tailored just for you.",
+                    textAlign: TextAlign.center,style: TextStyle(
+
+                        fontSize: 13,
+                        fontWeight: FontWeight.w300,
+                      color: Color(0xff5B5B5B)
+                    )),
+              ),
+              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween
+                ,children: [
+                  TextButton(onPressed: (){}, child: Text("Skip",
+                  style: TextStyle(
+                    color: Color(0xff5B5B5B),
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500
+                  ),))
+                ],)
             ],
           ),
     );
