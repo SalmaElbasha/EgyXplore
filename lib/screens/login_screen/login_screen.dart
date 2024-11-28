@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../../widgets/custom_back_button.dart';
+import '../../widgets/custom_container_button.dart';
+import '../../widgets/custom_text_form_field.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -6,127 +11,26 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(80.0),
-        child: AppBar(
-          elevation: 0,
-          backgroundColor: Colors.transparent,
-          centerTitle: true,
-          toolbarHeight: 100.0,
-          leading: Center(
-            child: GestureDetector(
-              onTap: () {},
-              child: Container(
-                margin: EdgeInsets.only(left: 10,top: 15),
-                width: 42,
-                height: 42,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  border: Border.all(
-                    color: Colors.black,
-                    width: 2.0,
-                  ),
-                ),
-                child: const CircleAvatar(
-                  backgroundColor: Colors.transparent,
-                  child: Icon(
-                    Icons.arrow_back,
-                    color: Colors.black,
-                    size: 20,
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ),
+      appBar: CustomBackButton(
+        onBackTap: () {},
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Container(
-            width: 274,
+            width: Get.width * 0.7,
             child: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Center(
-                  child: SizedBox(
-                    width: 274,
-                    height: 61,
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                        labelText: "Email",
-                        labelStyle: const TextStyle(
-                          color: Colors.brown,
-                          fontSize: 16,
-                        ),
-                        floatingLabelBehavior: FloatingLabelBehavior.always,
-                        contentPadding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30),
-                          borderSide: BorderSide(
-                              color: Colors.brown,
-                              width: 2
-                          ),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30),
-                          borderSide: const BorderSide(
-                            color: Colors.brown,
-                            width: 2.0,
-                          ),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30),
-                          borderSide: const BorderSide(
-                            color: Colors.brown,
-                            width: 2.0,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+                  child:CustomTextFormField(text: 'Email',),
                 ),
                   SizedBox(
                     height: 40,
                   ),
                   Center(
-                    child: SizedBox(
-                      width: 274,
-                      height: 61,
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                          labelText: "Password",
-                          labelStyle: const TextStyle(
-                            color: Colors.brown,
-                            fontSize: 16,
-                          ),
-                          floatingLabelBehavior: FloatingLabelBehavior.always,
-                          contentPadding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(30),
-                            borderSide: BorderSide(
-                                color: Colors.brown,
-                                width: 2
-                            ),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(30),
-                            borderSide: const BorderSide(
-                              color: Colors.brown,
-                              width: 2.0,
-                            ),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(30),
-                            borderSide: const BorderSide(
-                              color: Colors.brown,
-                              width: 2.0,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
+                    child: CustomTextFormField(text: 'Password',),
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
@@ -138,7 +42,7 @@ class LoginScreen extends StatelessWidget {
                           fontSize: 13,
                           color: Color(0xFF565656),
                           decoration: TextDecoration.underline,
-              
+
                         ),
                       )),
                     ],
@@ -149,25 +53,7 @@ class LoginScreen extends StatelessWidget {
           ),
             Column(
               children: [
-                Container(
-                  width: 274,
-                  height: 52,
-                  decoration:BoxDecoration(
-                    borderRadius: BorderRadius.circular(40),
-                    border: Border.all(color: Color(0xFFC3AC8E), width: 2),
-                    color: Color(0xFFC3AC8E),
-                  ) ,
-                  child: Center(
-                    child: Text(
-                      "Sign in",
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.black,
-                        fontWeight: FontWeight.normal,
-                      ),
-                    ),
-                  ),
-                ),
+                CustomContainerButton(text: 'Sign in', onTap: () {  }),
                 SizedBox(height: 20,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
