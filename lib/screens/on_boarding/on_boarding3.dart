@@ -1,3 +1,4 @@
+import 'package:egyxplore/screens/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -92,7 +93,9 @@ class OnBoarding3 extends StatelessWidget {
                       fontWeight: FontWeight.w500
                   ),)),
                 InkWell(
-                  onTap: (){},
+                  onTap: (){
+                    Get.to(WelcomeScreen());
+                  },
                   child: Container(
                     margin: EdgeInsets.only(right: 10),
                     height: Get.height*0.07,
