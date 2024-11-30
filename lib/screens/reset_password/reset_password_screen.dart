@@ -96,7 +96,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                     CustomContainerButton(
                       text: 'Reset',
                       onTap: () {},
-                      backgroundColor: Color(0xffC3AC8E),
+                      backgroundColor: Color(0xff8B5843),textColor: Colors.white,
                     ),
                   ],
                 ),
