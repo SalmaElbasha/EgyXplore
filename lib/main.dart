@@ -2,6 +2,7 @@
 import 'package:egyxplore/screens/forget_password/forget_password_screen.dart';
 import 'package:egyxplore/screens/login_screen/login_screen.dart';
 import 'package:egyxplore/screens/please_check_your_email/please_check_your_email_screen.dart';
+import 'package:egyxplore/screens/reset_password/reset_password_screen.dart';
 
 import 'package:egyxplore/screens/signup_screen/signup_screen.dart';
 
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
       title: 'EgyXplore',
       debugShowCheckedModeBanner: false,
 
-      home: PleaseCheckYourEmailScreen(),
+      home: ResetPasswordScreen(),
 
     );
   }
