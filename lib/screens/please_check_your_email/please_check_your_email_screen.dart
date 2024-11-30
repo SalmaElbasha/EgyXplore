@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import '../../widgets/custom_back_button.dart';
 import '../../widgets/custom_container_button.dart';
@@ -54,113 +55,123 @@ class PleaseCheckYourEmailScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: CustomBackButton(onBackTap: () {}),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          Column(
+      body: SingleChildScrollView(
+        child: Container(
+          width: Get.width,
+          height: Get.height*0.85,
+          child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Container(
-                margin: EdgeInsets.only(right: 64,bottom: 29),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    Text(
-                      "Please check your Email",
-                      style: TextStyle(
-                        fontSize: 25,
-                        color: Colors.black,
-                        fontWeight: FontWeight.normal,
-                      ),
-                    ),
-                    SizedBox(height: 7),
-                    Text(
-                      "Ensure your account's security by entering the\ncode to proceed with the password change.\nYour safety is our priority.",
-                      style: TextStyle(
-                        fontSize: 13,
-                        color: Color(0xff737373),
-                        fontWeight: FontWeight.normal,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(height: 50),
-              Padding(
-                padding: const EdgeInsets.only(left: 18),
-                child: SizedBox(
-                  width: Get.width,
-                  height: 60,
-                  child: ListView.separated(
-                    separatorBuilder: (context, index) => SizedBox(width: Get.width * 0.08),
-                    itemBuilder: (context, index) {
-                      return SizedBox(
-                        width: Get.width * 0.16,
-                        height: Get.width * 0.2,
-                        child: TextFormField(
-                          keyboardType: TextInputType.number,
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10),
-                              borderSide: const BorderSide(
-                                color: Color(0xFFD9BF9E),
-                                width: 2,
-                              ),
-                            ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(right: 64,bottom: 29),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        Text(
+                          "Please check your Email",
+                          style: TextStyle(
+                            fontSize: 25,
+                            color: Colors.black,
+                            fontWeight: FontWeight.normal,
                           ),
                         ),
-                      );
-                    },
-                    itemCount: 4,
-                    scrollDirection: Axis.horizontal,
-                    physics: NeverScrollableScrollPhysics(),
+                        SizedBox(height: 7),
+                        Text(
+                          "Ensure your account's security by entering the\ncode to proceed with the password change.\nYour safety is our priority.",
+                          style: TextStyle(
+                            fontSize: 13,
+                            color: Color(0xff737373),
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-              ),
-              SizedBox(height: 30,),
-              GetBuilder<EmailVerificationController>(
-                builder: (controller) => Center(
-                  child: GestureDetector(
-                    onTap: controller.canResend ? controller.resetTimer : null,
-                    child: Text(
-                      "Resend code",
-                      style: TextStyle(
-                        fontSize: 14,
-                        color: controller.canResend
-                            ? Colors.black
-                            : const Color(0xff794B39),
-                        decoration: TextDecoration.underline,
+                  const SizedBox(height: 50),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 18),
+                    child: SizedBox(
+                      width: Get.width,
+                      height: 60,
+                      child: ListView.separated(
+                        separatorBuilder: (context, index) => SizedBox(width: Get.width * 0.08),
+                        itemBuilder: (context, index) {
+                          return SizedBox(
+                            width: Get.width * 0.16,
+                            height: Get.width * 0.2,
+                            child: TextFormField(
+
+                              inputFormatters: [
+                                LengthLimitingTextInputFormatter(1),  // Only one character
+                              ],
+                              keyboardType: TextInputType.number,
+                              decoration: InputDecoration(
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: const BorderSide(
+                                    color: Color(0xFFD9BF9E),
+                                    width: 2,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          );
+                        },
+                        itemCount: 4,
+                        scrollDirection: Axis.horizontal,
+                        physics: NeverScrollableScrollPhysics(),
                       ),
                     ),
                   ),
-                ),
-              ),
-              GetBuilder<EmailVerificationController>(
-                builder: (controller) => Center(
-                  child: Text(
-                    "00:${controller.timerValue.toString().padLeft(2, '0')}",
-                    style: const TextStyle(
-                      fontSize: 12,
-                      color: Color(0xff000000),
+                  SizedBox(height: 30,),
+                  GetBuilder<EmailVerificationController>(
+                    builder: (controller) => Center(
+                      child: GestureDetector(
+                        onTap: controller.canResend ? controller.resetTimer : null,
+                        child: Text(
+                          "Resend code",
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: controller.canResend
+                                ?const Color(0xff794B39)
+                                : Colors.black,
+                            decoration: TextDecoration.underline,
+                          ),
+                        ),
+                      ),
                     ),
                   ),
-                ),
+                  GetBuilder<EmailVerificationController>(
+                    builder: (controller) => Center(
+                      child: Text(
+                        "00:${controller.timerValue.toString().padLeft(2, '0')}",
+                        style: const TextStyle(
+                          fontSize: 12,
+                          color: Color(0xff000000),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Column(
+                children: [
+                  Center(
+                    child: CustomContainerButton(
+                      text: 'Verify',
+                      onTap: () {},
+                      backgroundColor: const Color(0xffC3AC8E),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
-          Column(
-            children: [
-              Center(
-                child: CustomContainerButton(
-                  text: 'Verify',
-                  onTap: () {},
-                  backgroundColor: const Color(0xffC3AC8E),
-                ),
-              ),
-            ],
-          ),
-        ],
+        ),
       ),
     );
   }
