@@ -1,4 +1,5 @@
 
+import 'package:egyxplore/screens/Choose_The_Language/choose_the_language.dart';
 import 'package:egyxplore/screens/forget_password/forget_password_screen.dart';
 import 'package:egyxplore/screens/login_screen/login_screen.dart';
 import 'package:egyxplore/screens/please_check_your_email/please_check_your_email_screen.dart';
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
       title: 'EgyXplore',
       debugShowCheckedModeBanner: false,
 
-      home: ResetPasswordScreen(),
+      home: ChooseTheLanguage(),
 
     );
   }
