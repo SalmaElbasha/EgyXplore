@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  const CustomTextFormField({super.key,  required this.text});
+  const CustomTextFormField({super.key,  required this.text, this.suffixIcon});
   final String text;
+  final Widget? suffixIcon;
   @override
   Widget build(BuildContext context) {
     return  SizedBox(
@@ -12,8 +13,10 @@ class CustomTextFormField extends StatelessWidget {
       height: 61,
       child: TextFormField(
         decoration: InputDecoration(
+          suffixIcon: suffixIcon??null,
           labelText: text,
           labelStyle: const TextStyle(
+
             color: Colors.brown,
             fontSize: 16,
           ),
