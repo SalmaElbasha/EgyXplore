@@ -46,12 +46,13 @@ class EmailVerificationController extends GetxController {
   }
 }
 
-class PleaseCheckYourEmailScreen extends StatelessWidget {
-  const PleaseCheckYourEmailScreen({super.key});
+class EnterVerificationcodeScreen extends StatelessWidget {
+  const EnterVerificationcodeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(EmailVerificationController());
+
     return Scaffold(
       appBar: CustomBackButton(onBackTap: () {}),
       body: SingleChildScrollView(
@@ -66,12 +67,20 @@ class PleaseCheckYourEmailScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-                    margin: EdgeInsets.only(right: 64,bottom: 29),
+                    width: 200,
+                    height: 200,
+                    child: Image.asset(
+                      'assets/images/Two factor authentication-rafiki 1.png', // Replace with your image path
+                      fit: BoxFit.cover, // Adjusts the image to cover the container
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(right: 10,bottom: 29),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: const [
                         Text(
-                          "Please check your Email",
+                          "Enter Verification code",
                           style: TextStyle(
                             fontSize: 25,
                             color: Colors.black,
@@ -80,7 +89,7 @@ class PleaseCheckYourEmailScreen extends StatelessWidget {
                         ),
                         SizedBox(height: 7),
                         Text(
-                          "Ensure your account's security by entering the\ncode to proceed with the password change.\nYour safety is our priority.",
+                          "      Secure your account by entering the\nunique verification code sent to your email\nfor a seamless and protected experience.",
                           style: TextStyle(
                             fontSize: 13,
                             color: Color(0xff737373),
