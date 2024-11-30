@@ -70,8 +70,10 @@ class EnterVerificationcodeScreen extends StatelessWidget {
                     width: 200,
                     height: 200,
                     child: Image.asset(
-                      'assets/images/Two factor authentication-rafiki 1.png', // Replace with your image path
-                      fit: BoxFit.cover, // Adjusts the image to cover the container
+
+                      'assets/images/Two factor authentication-rafiki 1.png',
+                      fit: BoxFit.cover,
+
                     ),
                   ),
                   Container(
@@ -172,7 +174,7 @@ class EnterVerificationcodeScreen extends StatelessWidget {
                     child: CustomContainerButton(
                       text: 'Verify',
                       onTap: () {},
-                      backgroundColor: const Color(0xffC3AC8E),
+                      backgroundColor: Color(0xff8B5843),textColor: Colors.white,
                     ),
                   ),
                 ],
