@@ -52,7 +52,6 @@ class PleaseCheckYourEmailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(EmailVerificationController());
-
     return Scaffold(
       appBar: CustomBackButton(onBackTap: () {}),
       body: SingleChildScrollView(

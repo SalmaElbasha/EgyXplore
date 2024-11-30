@@ -70,8 +70,10 @@ class EnterVerificationcodeScreen extends StatelessWidget {
                     width: 200,
                     height: 200,
                     child: Image.asset(
+
                       'assets/images/Two factor authentication-rafiki 1.png',
                       fit: BoxFit.cover,
+
                     ),
                   ),
                   Container(
