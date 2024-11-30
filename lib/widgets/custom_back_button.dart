@@ -22,8 +22,8 @@ class CustomBackButton extends StatelessWidget implements PreferredSizeWidget {
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             border: Border.all(
-              color: Colors.black,
-              width: 2.0,
+              color: Color(0xff8B5843),
+              width: 2.7,
             ),
           ),
           child: const CircleAvatar(
