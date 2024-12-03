@@ -180,7 +180,7 @@ class ScamScreen extends StatelessWidget {
                                 ),
                               ),
                               Container(
-                                width: 260,
+                                width: Get.width*0.6,
                                 height: 27,
                                 decoration: BoxDecoration(
                                   color: Color(0xff8B5843),
