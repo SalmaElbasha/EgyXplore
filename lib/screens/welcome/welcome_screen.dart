@@ -42,7 +42,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   Center(
                     child: Container(
                       width: Get.width * 0.7,
-                      height: Get.height * 0.05,
+                      height: Get.height * 0.065,
                       child: Text(
                         "Discover Egypt effortlessly with our tourism app.",
                         textAlign: TextAlign.center,

@@ -50,6 +50,7 @@ dependencies:
   intl: ^0.18.0
   country_picker: ^2.0.16
   country_flags: ^2.0.0
+  flutter_rating_bar: ^4.0.1
 
 dev_dependencies:
   flutter_test:
