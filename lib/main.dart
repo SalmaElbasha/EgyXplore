@@ -1,6 +1,10 @@
 
 import 'package:egyxplore/screens/Choose_The_Language/choose_the_language.dart';
+import 'package:egyxplore/screens/Registered_successfully/Registered_successfully.dart';
+import 'package:egyxplore/screens/add_phone_number/add_phone_number_screen.dart';
+import 'package:egyxplore/screens/enter_verification-code/enter_verification_code_screen.dart';
 import 'package:egyxplore/screens/forget_password/forget_password_screen.dart';
+import 'package:egyxplore/screens/home/home_screen.dart';
 import 'package:egyxplore/screens/login_screen/login_screen.dart';
 import 'package:egyxplore/screens/please_check_your_email/please_check_your_email_screen.dart';
 import 'package:egyxplore/screens/reset_password/reset_password_screen.dart';
@@ -32,7 +36,7 @@ class MyApp extends StatelessWidget {
       title: 'EgyXplore',
       debugShowCheckedModeBanner: false,
 
-      home: ChooseTheLanguage(),
+      home:HomeScreen(),
 
     );
   }
