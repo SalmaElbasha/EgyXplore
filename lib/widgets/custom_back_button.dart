@@ -3,14 +3,16 @@ import 'package:flutter/material.dart';
 
 class CustomBackButton extends StatelessWidget implements PreferredSizeWidget {
   final VoidCallback onBackTap;
-
-  const CustomBackButton({Key? key, required this.onBackTap}) : super(key: key);
+  final String? skipText;
+  final VoidCallback? onSkipTap;
+  final Color backGround;
+  const CustomBackButton({Key? key, required this.onBackTap, this.skipText, this.onSkipTap, this.backGround=const Color(0xFFC3AC8E)}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       elevation: 0,
-      backgroundColor: Colors.transparent,
+      backgroundColor:backGround,
       centerTitle: true,
       toolbarHeight: 100.0,
       leading: GestureDetector(
@@ -36,6 +38,35 @@ class CustomBackButton extends StatelessWidget implements PreferredSizeWidget {
           ),
         ),
       ),
+      actions: skipText != null
+          ? [
+        GestureDetector(
+          onTap: onSkipTap,
+          child: Padding(
+            padding: const EdgeInsets.only(right: 15, top: 15),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  skipText!,
+                  style: const TextStyle(
+                    fontSize: 17,
+                    color: Colors.black,
+                  ),
+                ),
+                Container(
+                  width: 30,
+                  child: const Icon(
+                    Icons.arrow_forward,
+                    size: 38,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ]
+          : null,
     );
   }
 
