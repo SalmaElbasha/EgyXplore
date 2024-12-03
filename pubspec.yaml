@@ -48,6 +48,8 @@ dependencies:
   permission_handler: ^10.2.0
   file_picker: ^5.2.4
   intl: ^0.18.0
+  country_picker: ^2.0.16
+  country_flags: ^2.0.0
 
 dev_dependencies:
   flutter_test:

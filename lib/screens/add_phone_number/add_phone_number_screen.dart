@@ -70,7 +70,7 @@ class AddPhoneNumberScreen extends StatelessWidget {
                 Container(
                   height:Get.height*0.27,
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       InkWell(
                         onTap: (){},
@@ -118,26 +118,29 @@ class AddPhoneNumberScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      InkWell(
-                        onTap: (){},
-                        child: Container(
-                          width:Get.width*0.127,
-                          height: Get.height*0.065,
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              border: Border.all(
-                                  color: Colors.black,
-                                  width: 2
-                              ),
-                              borderRadius: BorderRadius.circular(100)
-                          ),
-                          child: Center(
-                            child: Text("7",
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 25
-                              ),),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 3.5),
+                        child: InkWell(
+                          onTap: (){},
+                          child: Container(
+                            width:Get.width*0.127,
+                            height: Get.height*0.065,
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                border: Border.all(
+                                    color: Colors.black,
+                                    width: 2
+                                ),
+                                borderRadius: BorderRadius.circular(100)
+                            ),
+                            child: Center(
+                              child: Text("7",
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 25
+                                ),),
+                            ),
                           ),
                         ),
                       )
