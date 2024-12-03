@@ -16,7 +16,6 @@ class _SettingState extends State<Setting> {
     double baseWidth = 300;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-
     return Container(
       width: 220 * fem,
       padding: EdgeInsets.fromLTRB(0 * fem, 30 * fem, 0 * fem, 20 * fem),
