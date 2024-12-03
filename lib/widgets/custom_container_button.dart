@@ -7,12 +7,13 @@ class CustomContainerButton extends StatelessWidget {
   final Color backgroundColor;
   final String text;
   final Color textColor;
+  final double? borderRaduis;
   const CustomContainerButton({
     super.key,
     required this.text,
     required this.onTap,
     this.backgroundColor = const Color(0xFFC3AC8E),
-    this.textColor = Colors.black,
+    this.textColor = Colors.black, this.borderRaduis,
   });
   @override
   Widget build(BuildContext context) {
@@ -22,7 +23,7 @@ class CustomContainerButton extends StatelessWidget {
         width: Get.width * 0.7, // Example: 70% of the screen width
         height:61,
         decoration:BoxDecoration(
-          borderRadius: BorderRadius.circular(40),
+          borderRadius: BorderRadius.circular(borderRaduis??40),
           border: Border.all(color: Color(0xFFC3AC8E), width: 2),
           color: backgroundColor,
         ) ,

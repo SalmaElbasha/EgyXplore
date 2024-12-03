@@ -5,14 +5,14 @@ class CustomBackButton extends StatelessWidget implements PreferredSizeWidget {
   final VoidCallback onBackTap;
   final String? skipText;
   final VoidCallback? onSkipTap;
-  final Color backGround;
-  const CustomBackButton({Key? key, required this.onBackTap, this.skipText, this.onSkipTap, this.backGround=const Color(0xFFC3AC8E)}) : super(key: key);
+  final Color? backGround;
+  const CustomBackButton({Key? key, required this.onBackTap, this.skipText, this.onSkipTap, this.backGround}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       elevation: 0,
-      backgroundColor:backGround,
+      backgroundColor:backGround??const Color(0xFFC3AC8E),
       centerTitle: true,
       toolbarHeight: 100.0,
       leading: GestureDetector(
