@@ -1,3 +1,4 @@
+import 'package:egyxplore/screens/Question/Question_Screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'controller/welcome_controller.dart';
@@ -183,7 +184,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                               Padding(
                                 padding: const EdgeInsets.all(10.0),
                                 child: IconButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Get.to(()=>QuestionScreen());
+                                  },
                                   icon: Image(
                                     image: AssetImage(
                                       "assets/images/🦆 icon _google circled_.png",
