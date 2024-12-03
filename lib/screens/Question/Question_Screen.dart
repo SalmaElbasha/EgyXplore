@@ -16,14 +16,28 @@ class QuestionScreen extends StatefulWidget {
     "Nature",
     "Nightlife",
     "Treatment",
-    "Arts"
-  ];
+    "Arts",
+    "Diving",
+    "Oasis",
+    "Villages",
+    "Museums",
+    "Festivals",
+    "Death tourism"
+  ]; // Added more categories for demonstration.
+
   @override
   State<QuestionScreen> createState() => _QuestionScreenState();
 }
 
 class _QuestionScreenState extends State<QuestionScreen> {
-  List<bool> selectedValues = List.generate(10, (_) => false);
+  List<bool> selectedValues = [];
+  bool isExpanded = false;
+
+  @override
+  void initState() {
+    super.initState();
+    selectedValues = List.generate(widget.categories.length, (_) => false);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -79,15 +93,16 @@ class _QuestionScreenState extends State<QuestionScreen> {
                 children: [
                   SizedBox(
                     width: screenWidth * 0.8,
-                    height: screenHeight * 0.5,
+                    height: isExpanded ? null : screenHeight * 0.4,
                     child: GridView.builder(
+                      shrinkWrap: true,
                       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,
                         crossAxisSpacing: 20,
                         mainAxisSpacing: 20,
                         childAspectRatio: 3.5,
                       ),
-                      itemCount: widget.categories.length,
+                      itemCount: isExpanded ? widget.categories.length : 10, // Show limited or all items
                       itemBuilder: (context, index) {
                         return Row(
                           children: [
@@ -112,15 +127,21 @@ class _QuestionScreenState extends State<QuestionScreen> {
                           ],
                         );
                       },
-                      physics: NeverScrollableScrollPhysics(),
                     ),
                   ),
-                  Text(
-                    "See more",
-                    style: TextStyle(
-                      fontSize: screenWidth * 0.04,
-                      color: const Color(0xff794B39),
-                      decoration: TextDecoration.underline,
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        isExpanded = !isExpanded;
+                      });
+                    },
+                    child: Text(
+                      isExpanded ? "Show less" : "See more",
+                      style: TextStyle(
+                        fontSize: screenWidth * 0.04,
+                        color: const Color(0xff794B39),
+                        decoration: TextDecoration.underline,
+                      ),
                     ),
                   ),
                 ],

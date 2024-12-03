@@ -57,8 +57,9 @@ class CustomBackButton extends StatelessWidget implements PreferredSizeWidget {
                 Container(
                   width: 30,
                   child: const Icon(
-                    Icons.arrow_forward,
-                    size: 38,
+                    Icons.arrow_forward_rounded,
+                    size: 25,
+                    color: Color(0xff794B39),
                   ),
                 ),
               ],
